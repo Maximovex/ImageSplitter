@@ -16,9 +16,9 @@ hsize=height*base_width/width
 
 im = im.resize((base_width, int(hsize)), Image.Resampling.BICUBIC)
 
-im_name=os.path.basename(file_path).split('.')[0]+'_1440.png'
-im.save(os.path.basename(file_path).split('.')[0]+'_1440.png','PNG',quality=100)
+im_name=os.path.basename(file_path).split('.')[0]
+im.save(im_name+'_1440.png','PNG',quality=100)
 rows=int(hsize//708+1)
 
 
-split_image(im_name, rows, 1, False, False)
+split_image(im_name+'_1440.png', rows, 1, False, False,output_dir=os.path.dirname(file_path))
